@@ -75,7 +75,6 @@ body {
     visibility: hidden;
 }
 
-
 .btn-submit {
     padding: 15px;
     font-size: 2rem;
@@ -92,9 +91,8 @@ body {
 }
 
 .btn-submit:hover {
-    background-color: var(--roxo);
     transform: scale(1.01);
-
+    background-color: var(--roxo);
 }
 
 .controle.com-texto .campo {

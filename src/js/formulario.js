@@ -1,25 +1,11 @@
 /*
-// - pegar o id do formulario;
+- pegar o id do formulario
 - pagar cada id dos itens do formulario
 - criar uma ação para o botao do formulario
 - verificar se o item foi preenchido
+    1 - SE nao foi preenchido mudar a borda para vermelho e mostrar o texto 'campo obrigatorio'
+    2 - SE estiver com texto mudar a borda para verde lima */
 
-- pegar o botao do formulario.
-    1 - verificar se foi escrito algo nos campos do formulario
-
-
-
-- pegar o fumalario
--  pegar cada caixa do formulario
-- criar uma validacao para cada caixa
-    1 - se tiver assunto, alterar a borda para verde
-    2 - se for clicado em 'enviar' sem que tenha preenchido todas os campos, mudar a borda para vermelho e mostrar a mesnagem 'campo obrigatorioa
-- pegar o texto diitado em um input e armazenar em uam varivel
-
-
-
-
-    */
 // - pegar o id do formulario;
 const formulario = document.getElementById('formulario');
 
@@ -30,64 +16,36 @@ const numeroTelefone = document.getElementById('numero');
 const campoDeMensagem = document.getElementById('mensagem');
 
 // - criar uma ação para o botao do formulario
-formulario.addEventListener('submit', (e) =>{
+formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
     checkCampos();
 })
-// - verificar se o item foi preenchido
+// - verificar se o item esta vazio ou foi preenchido
 function checkCampos() {
-    // const nomeUsuarioComTexto = nomeUsuario.value;
-    // const emailUsuarioComTexto = emailUsuario.value;
-    // const numeroTelefoneComNumero = numeroTelefone.value;
-    // const campoDeMensagemComTexto = campoDeMensagem.value;
+    nomeUsuario.value === "" ? messagemDeErro(nomeUsuario) : mensagemDeSucesso(nomeUsuario);
 
-    if (nomeUsuario.value === "") {
-        messagemDeErro(nomeUsuario);
-    }else{
-        mensagemDeSucesso(nomeUsuario);
-    }
+    emailUsuario.value === "" ? messagemDeErro(emailUsuario) : mensagemDeSucesso(emailUsuario);
 
-    if (emailUsuario.value === "") {
-        messagemDeErro(emailUsuario);
-    }else{
-        mensagemDeSucesso(emailUsuario);
-    }
+    numeroTelefone.value === "" ? messagemDeErro(numeroTelefone) : mensagemDeSucesso(numeroTelefone);
 
-    if (numeroTelefone.value === "") {
-        messagemDeErro(numeroTelefone);
-    }else{
-        mensagemDeSucesso(numeroTelefone);
-    }
-
-    if (campoDeMensagem.value === "") {
-        messagemDeErro(campoDeMensagem);
-    }else{
-        mensagemDeSucesso(campoDeMensagem);
-    }
-
+    campoDeMensagem.value === "" ? messagemDeErro(campoDeMensagem) : mensagemDeSucesso(campoDeMensagem);
 }
-
+// - funcao caso o item esteja vazio
 function messagemDeErro(input) {
     const controle = input.parentElement;
     const small = controle.querySelector('small');
 
-    // add a msg de erro
+    // add a mgs de erro no small
     small.innerText = 'campo obrigatório';
 
-    // aa a class de erro
+    // mudar as class's
     controle.className = 'controle em-branco';
 }
-
+// caso tenha qualquer texto
 function mensagemDeSucesso(input) {
     const controle = input.parentElement;
-    
+
     // add a class de secesso
-    controle.className='controle com-texto';
+    controle.className = 'controle com-texto';
 }
-function checkEmail(email) {
-    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-      email
-    );
-  }
-  
