@@ -1,0 +1,111 @@
+:root {
+    --verde: #3CCC87;
+    --roxo: rgb(100, 129, 229);
+    --vermelho: #F52E2E;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(../imagens/bg-repeat.jpg);
+    background-repeat: repeat-x;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.secao-mensagem {
+    max-width: 550px;
+    color: #fff;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.secao-mensagem h1 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.secao-mensagem p {
+    font-size: 2.3rem;
+    font-weight: 400;
+}
+
+.formulario {
+    background-color: #fff;
+    width: 500px;
+    padding: 30px;
+    font-size: 1.6rem;
+}
+
+.formulario .controle {
+    margin-bottom: 10px;
+}
+
+.formulario .campo {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid;
+    resize: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.formulario small {
+    font-size: 1rem;
+    visibility: hidden;
+}
+
+
+.btn-submit {
+    padding: 15px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    border: none;
+    background-color: var(--verde);
+    color: #fff;
+    cursor: pointer;
+    transition: .1s ease;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
+.btn-submit:hover {
+    background-color: var(--roxo);
+    transform: scale(1.01);
+
+}
+
+.controle.com-texto .campo {
+    border-color: var(--verde);
+}
+
+.controle.em-branco .campo {
+    border-color: var(--vermelho);
+}
+
+.controle.em-branco small {
+    visibility: visible;
+    color: var(--vermelho);
+}
