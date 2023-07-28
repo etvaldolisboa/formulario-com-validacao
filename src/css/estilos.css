@@ -3,6 +3,7 @@
     --color-msg: #a8a8a8;
     --vermelho: #F52E2E;
     --preto: #000000;
+    --branco: #ffffff;
     --alinhamento-grande: 23.44px;
     --alinhamento-medio: 17.58px;
     --alinhamento-pequeno:9.38px;
@@ -41,7 +42,7 @@ body {
 }
 .secao-mensagem {
     max-width: 300px;
-    color: #fff;
+    color: var(--branco) ;
 }
 
 .secao-mensagem h1 {
@@ -57,7 +58,7 @@ body {
 }
 
 .formulario {
-    background-color: #fff;
+    background-color: var(--branco);
     max-width: 340px;
     padding: 20px;
     line-height: var(--alinhamento-medio);
@@ -106,7 +107,7 @@ body {
     width: 100%;
     border: none;
     background-color: var(--verde);
-    color: #ffffff;
+    color: var(--branco);
     cursor: pointer;
     margin-top: 5px;
     border-radius: 5px;
@@ -116,10 +117,8 @@ body {
     border-color: var(--verde);
 }
 
-.controle  .campo.em-branco {
+.controle.em-branco .campo {
     border-color: var(--vermelho);
-    /* visibility: inherit; */
-
 }
 
 .controle.em-branco small {
